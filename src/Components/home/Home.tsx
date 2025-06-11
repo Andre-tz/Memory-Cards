@@ -9,17 +9,7 @@ const Home = ( ) =>{
         <main className="bg-white-0 p-4 flex flex-col items-center justify-center min-h-screen">
 
             <h1 className="text-5xl">{ t( "title" ) }</h1>
-
             <h2 className="text-2xl">{ t( "subtitle" ) }</h2>
-
-            {/* 
-                <div>
-                    <label>
-                    <input type="checkbox" />
-                    Cambiar a Dev Edition
-                    </label>
-                </div>
-            */}
             <DifficultyPanel />
             
         </main>
