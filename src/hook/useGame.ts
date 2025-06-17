@@ -2,7 +2,7 @@
 //es decir accedemos al contexto  y si no se encuentra lanzamos un error ( cuando usamos fuera del provider ) y en caso de que haya lo exportamos y lo usamos con useGame
 
 import { useContext } from "react";
-import GameContext from "../Components/game/Context/GameContext";
+import GameContext from "../Context/GameContext";
 const useGame = () =>{
     const context = useContext( GameContext );
 

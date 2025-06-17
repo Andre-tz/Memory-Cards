@@ -3,10 +3,10 @@ import './index.css'
 import App from './App.tsx'
 import Home from './Components/home/Home.tsx';
 import Game from './Components/game/Game.tsx';
-import "./i18n"; // Ensure i18n is initialized before rendering
+import "./i18n/index.ts"; // Ensure i18n is initialized before rendering
 import { BrowserRouter} from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
-import GameProvider from './Components/game/Context/GameProvider.tsx';
+import GameProvider from './Context/GameProvider.tsx';
 
 createRoot(document.getElementById('root')!).render(
     <GameProvider>
