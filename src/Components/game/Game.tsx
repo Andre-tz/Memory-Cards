@@ -56,7 +56,7 @@ const Game = () =>{
             <> 
                 <IoMdArrowRoundBack onClick={ handleClick } className="absolute left-4"/>
                 <h1>Componente del juego</h1>
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap gap-5">
                     { gameImages.map( ( card, index  ) => (
                         <Cards
                             key={ index }
