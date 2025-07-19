@@ -8,6 +8,7 @@ import getRandomImages from "../../helpers/getRandomImages";
 import Cards from "./Cards";
 import preloadImages from "../../helpers/preloadImages";
 import { toast } from "sonner";
+import useGameLogic from "../../hook/useGameLogic";
 
 //este array contiene el nombre de todas las imagenes que se usaran en el juego
 const allImages = [ "blue-eyes", "bombardera", "cortex", "crash", "dark-magician", "deimos", "goku", "kratos", "luigi", "mario", "palito-pez", "red-eyes", "vegeta", "yoshi", "zeus"]
@@ -19,6 +20,8 @@ const Game = () =>{
     const navigation   = useNavigate();
     //esta constante sirve para condicionar cuando se debe mostrar mi juego
     const [ loadedImages, setLoadedImages ] = useState<boolean>( false );
+    //desestructurando las varaibles d emi hook personalizado
+    const { selectedCards,  matchedCards, handleCardClick } = useGameLogic()
     
     //manejando el click para navegar a otra pagina
     const handleClick = () =>{
@@ -26,7 +29,8 @@ const Game = () =>{
     }
 
     //aqui usaré el helper que he creado para obtener mis imagenes en una nueva constante
-    const gameImages = getRandomImages( allImages,userData.pairCards )
+    //const gameImages =  getRandomImages( allImages,userData.pairCards )//esto es un error ya que cada que hago click se ehecuta la funcion generando que las imagenes se vuelvan a mezclar
+    const [ gameImages ] = useState<string[]>( ()=> getRandomImages( allImages,userData.pairCards ))
     
      //usando mi helper para precargar las imagenes
     useEffect( ()=>{ 
@@ -42,6 +46,7 @@ const Game = () =>{
             })
     }, [ gameImages ])
 
+    useEffect( ()=> { console.log( selectedCards, "/n", matchedCards ) }, [ selectedCards, matchedCards])
     useEffect( ()=>{ toast.success( "Imágenes cargadas" ) }, [ loadedImages])
     //cuando el timer esta activo se renderizara el componente CountDown
     if( timerActive ) { return <CountDown /> }
@@ -60,7 +65,13 @@ const Game = () =>{
                     { gameImages.map( ( card, index  ) => (
                         <Cards
                             key={ index }
-                            name ={ card }
+                            id= { index }
+                            image ={ card }
+                            isFlipped = { 
+                                selectedCards.some( c => c.name === card && c.index === index) ||
+                                matchedCards.some( c => c == card )
+                            }
+                            onClick={ ( card, index ) => handleCardClick( { name: card, index: index  }) }
                         />
                     ))}
                 </div>
