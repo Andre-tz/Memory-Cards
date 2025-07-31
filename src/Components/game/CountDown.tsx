@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import useGame from "../../hook/useGame";
 import { useTranslation } from "react-i18next";
+import startCountdown from "../../helpers/startCountdown";
 const CountDown = () =>{
     //usare el contexto para activar el contador
     const { setTimerActive, setTimer, timer, setUserData } = useGame();
@@ -10,17 +11,8 @@ const CountDown = () =>{
 
     //este useEffect se disparará cuando se monte el componente 
     useEffect( () =>{
-        const interval = setInterval( ()=>{
-
-            setTimer ( prevTimer => {
-
-                if( prevTimer <= 1 ){
-                    clearInterval( interval );
-                    return 0 
-                }
-                return prevTimer - 1;
-            });
-        }, 1000 );
+        //usando el helper para dar cuenta atras
+        const interval = startCountdown( setTimer)
     
         return ( )=> clearInterval( interval );
     }, [ setTimerActive, setTimer] );
@@ -35,6 +27,7 @@ const CountDown = () =>{
         })) 
         }
     }, [ timer, setTimerActive, setUserData])
+    
     return (
         <>
             <h1>{  t( "gameStartIn" ) }</h1>

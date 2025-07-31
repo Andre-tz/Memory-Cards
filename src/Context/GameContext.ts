@@ -12,7 +12,7 @@ type  UserType ={
     language : string;
     pairCards : number;
     setpairCards : ( value: number ) => void;
-    gamestatus: GameStatus;
+    gameStatus: GameStatus;
     setGameStatus: ( string: GameStatus )=> void ;
 }
 

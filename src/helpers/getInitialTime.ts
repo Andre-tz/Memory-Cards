@@ -5,26 +5,26 @@ const getInitialTime = ( difficulty: string )=>{
         let time;
         switch ( difficulty ) {
             case "easy":
-                time = 45;
+                time = 30;
                 break;
 
             case "medium":
-                time = 60 ;
+                time = 45 ;
                 break;
 
             case "hard":
-                time = 85;
+                time = 50;
                 break;
 
             case "godMode":
-                time = 100; 
+                time = 90; 
                 break;
 
             default:
                 console.error( "Ha ocurrido un error con el tiempo")
                 break;
         }
-        return time? time : NaN;
+        return typeof time === "number" ? time : NaN;
     }
 
 export default getInitialTime;
