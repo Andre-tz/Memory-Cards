@@ -21,21 +21,26 @@
     "gameStartIn": "El juego comienza en:",
 
     "modalVictory": {
-    "title": "¡Felicidades!",
-    "message": "Has completado el juego exitosamente.",
-    "godModeMessage": "¡Eres una leyenda! Has superado el God Mode y ganado tu recompensa.",
-    "button": "Volver a jugar"
-  },
+        "title": "¡Victoria lograda!",
+        "message": "Enfrentaste el desafío y saliste victorioso. ¡Bien jugado!",
+        "godModeMessage": "Rompiste los límites y conquistaste lo imposible — el Modo Dios se inclina ante ti."
+}
+,
 
-  "loseModal": {
-    "title": "¡Oh no!",
-    "message": "Has perdido esta vez. Pero puedes volver a intentarlo.",
-    "button": "Intentar de nuevo"
-  },
+    "loseModal": {
+        "title": "Te rendiste...",
+        "message": "Abandonar la batalla no acaba el juego — solo retrasa tu gloria. Levántate cuando estés listo."
+    },
 
-  "timeOutModal": {
-    "title": "¡Tiempo agotado!",
-    "message": "No lograste emparejar todas las cartas a tiempo.",
-    "button": "Intentar otra vez"
-  }
+    "timeOutModal": {
+        "title": "El tiempo se esfumó...",
+        "message": "Tu mente fue aguda, pero no lo bastante rápida esta vez. Recupera el enfoque y vuelve a intentarlo."
+    },
+
+"buttonModals": {
+    "tryAgain": "Intentar de nuevo",
+    "giveUp": "Rendirse",
+    "exit": "Salir"
+}
+
 }

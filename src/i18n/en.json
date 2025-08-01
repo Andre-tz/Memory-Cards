@@ -22,21 +22,25 @@
     "gameStartIn": "The game starts in:",
 
     "modalVictory": {
-    "title": "Congratulations!",
-    "message": "You have successfully completed the game.",
-    "godModeMessage": "You're a legend! You conquered God Mode and earned your reward.",
-    "button": "Play Again"
-  },
+        "title": "Victory Achieved",
+        "message": "You faced the challenge and emerged victorious. Well played!",
+        "godModeMessage": "You shattered limits and conquered the impossible — God Mode bows to you."
+},
 
   "loseModal": {
-    "title": "Oh no!",
-    "message": "You lost this time. But you can try again.",
-    "button": "Try Again"
-  },
+    "title": "You Gave Up...",
+    "message": "Abandoning the fight doesn’t end the game — it delays your glory. Rise again when you're ready."
+},
 
-  "timeOutModal": {
-    "title": "Time's up!",
-    "message": "You didn’t match all the cards in time.",
-    "button": "Try Again"
-  }
+    "timeOutModal": {
+        "title": "Time Slipped Away...",
+        "message": "Your mind was sharp, but not fast enough this time. Reset your focus and strike again."
+    },
+
+    "buttonModals": {
+        "tryAgain": "Intentar de nuevo",
+        "giveUp": "Rendirse",
+        "exit": "Salir"
+    }
+
 }

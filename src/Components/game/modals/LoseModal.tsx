@@ -1,8 +1,12 @@
+import { useTranslation } from "react-i18next";
+
 const LoseModal = ( ) =>{
+    const { t } = useTranslation();
+
     return (
         <div>
-            <h2>¡Felicidades!</h2>
-            <p></p>
+            <h2>{ t("lostModal.title" ) }</h2>
+            <p>{ t("lostModal.message" ) }</p>
         </div>
     );
 }

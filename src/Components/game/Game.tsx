@@ -87,36 +87,6 @@ const Game = () =>{
 
         </div>
     )
-    
-    if( timerActive ) { return <CountDown /> }
-
-    if( !loadedImages ){
-        return ( 
-            <h1>Cargando Imagenes</h1>
-        )
-    } else{
-        //cuando el timer llega a 0 enotnces me retornara el juego en si
-        return (
-            <> 
-                <IoMdArrowRoundBack onClick={ handleClick } className="absolute left-4"/>
-                <h1>Componente del juego</h1>
-                <div className="flex flex-wrap gap-5">
-                    { gameImages.map( ( card, index  ) => (
-                        <Cards
-                            key={ index }
-                            id= { index }
-                            image ={ card }
-                            isFlipped = { //dependiendo al valor que esta aca se verá si lo carta se volteará o no
-                                selectedCards.some( c => c.name === card && c.index === index) ||
-                                matchedCards.some( c => c == card )
-                            }
-                            onClick={ ( card, index ) => handleCardClick( { name: card, index: index  }) }
-                        />
-                    ))}
-                </div>
-            </>
-        )
-    }
 }
 
 export default Game;
