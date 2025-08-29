@@ -3,7 +3,7 @@
 import { createContext } from "react";
 
 //este type tendrá los estados del usuario
-type GameStatus = "waiting" | "playing" | "won" | "lost" | "timeOut"
+type GameStatus = "waiting" | "countDown" | "playing" | "won" | "lost" | "timeOut"
 //este type tendrá los datos del usuario
 type  UserType ={
     name: string;

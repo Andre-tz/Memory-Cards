@@ -10,7 +10,7 @@ import preloadImages from "../../helpers/preloadImages";
 import { toast } from "sonner";
 import useGameLogic from "../../hook/useGameLogic";
 import CounterTimer from "./CounterTime";
-import IndexModal from "./modals/indexModal";
+import IndexModal from "./modals/IndexModal";
 
 //este array contiene el nombre de todas las imagenes que se usaran en el juego
 const allImages = [ "blue-eyes", "bombardera", "cortex", "crash", "dark-magician", "deimos", "goku", "kratos", "luigi", "mario", "palito-pez", "red-eyes", "vegeta", "yoshi", "zeus"]
@@ -88,7 +88,7 @@ const Game = () =>{
 
                     <div>
                         {
-                           ( userData.gameStatus!== "waiting" && userData.gameStatus!=="playing" ) && ( <IndexModal status ={ userData.gameStatus } />) 
+                           ( userData.gameStatus!== "waiting" && userData.gameStatus!=="playing" && userData.gameStatus!=="countDown"  ) && ( <IndexModal status ={ userData.gameStatus } />) 
                         }
                     </div>
                 </>
