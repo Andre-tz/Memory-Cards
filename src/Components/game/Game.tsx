@@ -17,27 +17,34 @@ const allImages = [ "blue-eyes", "bombardera", "cortex", "crash", "dark-magician
 
 const Game = () =>{
     //usamos el contexto para acceder a datos
-    const { timerActive, userData } = useGame();
+    const { timerActive, setTimerActive, setTimer,  userData } = useGame();
     //obtener el hook para manejar el click en el boton de atras
     const navigation   = useNavigate();
     //esta constante sirve para condicionar cuando se debe mostrar mi juego
     const [ loadedImages, setLoadedImages ] = useState<boolean>( false );
     //desestructurando las varaibles d emi hook personalizado
-    const { selectedCards,  matchedCards, handleCardClick, glitchWin } = useGameLogic()
+    const { selectedCards,  matchedCards, handleCardClick, glitchWin, resetGame } = useGameLogic()
+    //aqui usaré el helper que he creado para obtener mis imagenes en una nueva constante
+    const [ gameImages, setGameImages ] = useState<string[]>( ()=> getRandomImages( allImages,userData.pairCards ))
     
     //manejando el click para navegar a otra pagina
     const handleClick = () =>{
         navigation("/") //esto nos lleva al inicio
     }
-    //aqui usaré el helper que he creado para obtener mis imagenes en una nueva constante
-    //const gameImages =  getRandomImages( allImages,userData.pairCards )//esto es un error ya que cada que hago click se ehecuta la funcion generando que las imagenes se vuelvan a mezclar
-    const [ gameImages ] = useState<string[]>( ()=> getRandomImages( allImages,userData.pairCards ))
     
-        //manejando el glitch
+    //manejando el glitch
     const handleGlicth = () =>{
         glitchWin( gameImages );
     }
 
+    //funcion para manejar el reinicio del juego, lo hago aca porque tengo acceso a los estados que necesito
+    const handleResetGame = () => {
+        resetGame(); //limpia matchedCards u selectedCards
+        setGameImages( getRandomImages( allImages,userData.pairCards ) ) //cambia las cartas
+        setTimer( 5 );//lreinicia el contador
+        setTimerActive( true );//activa el contador
+    }
+    
      //usando mi helper para precargar las imagenes
     useEffect( ()=>{ 
         //con esto precargo lo las imagenes unicas no las duplicadas, para evitar guardar en cache iamgenes innecesarias
@@ -51,8 +58,8 @@ const Game = () =>{
                 toast.error( "Ocurrió un problema al cargar imágenes" )
             })
     }, [ gameImages ])
-    
-    useEffect( ()=>{ console.log( timerActive )  }, [ timerActive ])
+
+    useEffect( ()=>{ console.log( userData. gameStatus, selectedCards ) }, [ userData, selectedCards ])
     return(
         <div>
            {/* contenedor del glitch */}
@@ -91,7 +98,7 @@ const Game = () =>{
 
                     <div>
                         {
-                           ( userData.gameStatus!== "waiting" && userData.gameStatus!=="playing" && userData.gameStatus!=="countDown"  ) && ( <IndexModal status ={ userData.gameStatus } />) 
+                           ( userData.gameStatus!== "waiting" && userData.gameStatus!=="playing" && userData.gameStatus!=="countDown"  ) && ( <IndexModal status ={ userData.gameStatus } onReset={ handleResetGame} />) 
                         }
                     </div>
                 </>

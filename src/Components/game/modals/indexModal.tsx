@@ -6,9 +6,10 @@ import ButtonNavigation from "./ButtonsNavigation";
 type UserStatus= "won" |"timeOut" | "lost"
 type PropsModal = {
     status : UserStatus;
+    onReset : ()=> void;
 }
 
-const IndexModal = ( { status } : PropsModal ) =>{
+const IndexModal = ( { status, onReset  } : PropsModal ) =>{
 
     return (
         <div> 
@@ -19,10 +20,10 @@ const IndexModal = ( { status } : PropsModal ) =>{
                     status === "timeOut"?
                     <TimeOutModal />
                     :
-                    <ButtonNavigation />
+                    null
             }
             
-            <ButtonNavigation/>
+            <ButtonNavigation onReset={ onReset }/>
         </div>
     )
 }

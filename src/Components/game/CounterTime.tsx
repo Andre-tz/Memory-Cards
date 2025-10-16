@@ -25,7 +25,6 @@ const CounterTimer =( { matchedCards, gameImages  } : ArraysProps ) =>{
         if( matchedCards.length === gameImages.length / 2 ){
             //si son iguales entonces el estado del juego para a "won"
             setUserData( prev => ({ ...prev, gameStatus : "won" }))
-            console.log( " completaste el matched")
         }
     }, [ time, gameImages, matchedCards, setUserData ] )
 

@@ -49,7 +49,13 @@ const useGameLogic = ()=>{
         setMatchedCards( prev=> [ ...prev, ...matches])
     }
 
-    return{ selectedCards, matchedCards, handleCardClick, glitchWin }
+    //funcion para reiniciar el juego
+    const resetGame = ()=> {
+        setMatchedCards( [ ] );
+        setSelectedCards( [ ] );
+    }
+
+    return{ selectedCards, matchedCards, handleCardClick, glitchWin, resetGame }
 }
 
 export default useGameLogic;
