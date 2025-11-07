@@ -6,8 +6,8 @@ const LoseModal = ( ) =>{
 
     return (
         <div>
-            <h2>{ t("lostModal.title" ) }</h2>
-            <p>{ t("lostModal.message" ) }</p>
+            <h2>{ t("loseModal.title" ) }</h2>
+            <p>{ t("loseModal.message" ) }</p>
         </div>
     );
 }
