@@ -17,11 +17,11 @@ const InfoModal = ( ) => {
     }
     
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-            <div className="bg-white rounded-2xl shadow-xl p-6 max-w-sm w-full text-center">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+            <div className="w-[90%] max-w-sm bg-[var(--card)] text-[var(--text)] border border-[var(--border)] rounded-[var(--radius-card)] shadow-[var(--shadow-card)] p-6 text-center">
                 <h1 className="text-xl font-semibold mb-2">{t("infoModal.title")}</h1>
-                <p className="text-gray-700 mb-4">{t("infoModal.message")}</p>
-                <button onClick={handleNavigate} className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">{t("infoModal.button")}</button>
+                <p className="text-sm text-[var(--muted)] mb-5">{t("infoModal.message")}</p>
+                <button onClick={handleNavigate} className="px-4 py-2 bg-[var(--accent)] text-white rounded-md font-medium transition hover:opacity-90">{t("infoModal.button")}</button>
             </div>
         </div>
 

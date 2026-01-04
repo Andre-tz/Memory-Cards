@@ -22,29 +22,49 @@
     --bg: #f8fafc;
     --card: #ffffff;
     --text: #0f172a;
+    /*textos secundarios*/
     --muted: #64748b;
+    /* botones principales */
     --accent: #2563eb;
+
     --border: #e2e8f0;
 
+    /*exito del usuario */
     --success: #16a34a;
+    /* error */
     --danger: #dc2626;
 
     --radius-card: 0.75rem;
     --shadow-card: 0 8px 20px rgba(0, 0, 0, 0.08);
+
+    /*estilos para las imágenes*/
+    --card-image-bg: transparent;
+    --card-image-padding: 0;
+    --card-image-filter: grayscale(0);
+
 }
 
 /* CodeTheme */
 .theme-code{
     --bg: #020617;
-    --card: #020617;
+    --card: #010314;
     --text: #38bdf8;
+    /*textos secundarios*/
     --muted: #64748b;
+    /* botones principales */
     --accent: #22d3ee;
-    --border: #1e293b;
 
+    --border: #1e293b;
+    /*exito del usuario */
     --success: #22c55e;
+    /* error */
     --danger: #f43f5e;
 
     --radius-card: 0.375rem;
     --shadow-card: 0 0 0 rgba(0, 0, 0, 0);
+
+    /*estilos para imágenes */
+    --card-image-bg: #020617;
+    --card-image-padding: 0.75rem;
+    --card-image-filter: none;
 }

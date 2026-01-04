@@ -6,8 +6,6 @@ import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 
 //estas constantes tendran los estilos de lo botones
-const stylesButton = "px-2 border-2 border-red-600 w-40 rounded-2xl cursor-pointer transition-colors duration-300"
-const buttonDisabled = "bg-gray-400 text-white px-4 py-2 rounded cursor-not-allowed opacity-50";
 const buttonsLevels =[ "easy", "medium", "hard", "godMode" ];
 
 const DifficultyPanel = () => {
@@ -58,13 +56,13 @@ const DifficultyPanel = () => {
     useEffect( ( )=>{ console.log( "fue visto " + wasShown) } , [ wasShown] )
     return (
         <>
-            <div>
-                <div className="flex flex-col justify-between items-center">
+            <div className="w-full flex flex-col items-center gap-4">
+                <div className="flex flex-col gap-3 w-full">
                     { buttonsLevels.map(( level, index ) => {
                         return(
                             <button
                                 key={ index }
-                                className={ `${ stylesButton } ${ selected === level ? "bg-red-600 text-white" : "" }` }
+                                className={ `w-full py-2 border rounded-md transition text-center font-medium cursor-pointer ${ selected === level? "bg-[var(--accent)] text-white border-[var(--accent)]" : "bg-[var(--bg)] text-[var(--text)] border-[var(--border)] hover:bg-[var(--card)]" }` }
                                 onClick={  ( ) => handleClick( level ) }
                                 >{ t ( `difficulty.${ level }`) }
                             </button>
@@ -72,10 +70,10 @@ const DifficultyPanel = () => {
                     })}
                 </div>
 
-                <p className="mt-4 text-gray-600 text-center">{ !selected? "escoge tu dificultad" : t(`description.${ selected }`)}</p>
+                <p className="text-sm text-[var(--muted)] text-center min-h-[2.5rem]">{ !selected? "escoge tu dificultad" : t(`description.${ selected }`)}</p>
             </div>
             
-         <button className={ selected? "" : buttonDisabled } onClick={ handleModal }>{ t( "startGame" ) }</button>
+         <button className={` cursor-pointer mt-4 w-full py-2 rounded-md font-semibold transition ${ selected?  "bg-[var(--accent)] text-white hover:opacity-90}" : "bg-[var(--border)] text-[var(--muted)] cursor-not-allowed"} `} onClick={ handleModal }>{ t( "startGame" ) }</button>
             
         </>
         

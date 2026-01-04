@@ -21,13 +21,17 @@ const NameModal = ( )=>{
     }
 
     return (
-        <div className="absolute z-10 bg-green-600">
-            <h1>{ t( "nameModal.title" ) }</h1>
-            <p> { t( "nameModal.message" ) }</p>
-            <label>
-                <input onChange={ handleChange } value={ inputValue }  type="text" placeholder={ t( "nameModal.placeholder" ) } />
-            </label>
-            <button onClick={ handleClick }>{ t( "nameModal.button" ) }</button>
+        <div className="fixed inset-0 z-20 flex items-center justify-center bg-black/50">
+            <div className="w-[90%] max-w-md rounded-xl bg-[var(--bg)] p-6 text-[var(--text)] shadow-lg">
+                <h1 className="text-2xl font-bold mb-2">{ t( "nameModal.title" ) }</h1>
+                <p className="mb-4 text[var(--muted)]"> { t( "nameModal.message" ) }</p>
+
+                <label className="block mb-4">
+                    <input className="w-full rounded-md border border-[var(--border)] bg-[var(--bg)] px-3 py-2  outline-none placeholder:text-[var(--muted)]" onChange={ handleChange } value={ inputValue }  type="text" placeholder={ t( "nameModal.placeholder" ) } />
+                </label>
+
+                <button className="w-full bg-[var(--accent)] text-white py-2 rounded-md font-semibold transition hover:opacity-90 cursor-pointer" onClick={ handleClick }>{ t( "nameModal.button" ) }</button>
+            </div>
         </div>
     )
 }

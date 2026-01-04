@@ -20,7 +20,7 @@ const ThemeSwitcher = ( ) => {
 
     return (
         <div>
-            <button onClick={ handleTheme } className="bg-blue-100 p-2 border-2 border-blue-800 rounded-[10px] text-blue-800 cursor-pointer"> Cambiar Tema</button>
+            <button onClick={ handleTheme } className="px-3 py-2 text-sm font-medium bg-[var(--card)] text-[var(--text)] border border-[var(--border)] rounded-md cursor-pointer transition-colors duration-300 hover:bg-[var(--accent)] hover:text-[var(--bg)]"> Cambiar Tema</button>
         </div>
     )
 }

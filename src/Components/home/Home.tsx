@@ -33,14 +33,19 @@ const Home = ( ) =>{
     }, [ userData ])
     useEffect( ( )=>{ console.log( showInfo) } , [ showInfo])
     return(
-        <>
-            <ThemeSwitcher />
+        <section className="w-full max-w-md flex flex-col items-center gap-4 mt-6 text-center">
+            <div className="self-end"><ThemeSwitcher /></div>
+
             { modalActive && <NameModal />}
-            <h1 className="text-5xl">MatchFlip</h1>
-            <h2 className="text-2xl">{ t( "subtitle" ) }</h2>
-            <DifficultyPanel />  
+
+            <h1 className="text-3xl font-bold tracking-tight text-[var(--text)]">MatchFlip</h1>
+            <h2 className="text-base text-[var(--muted)]">{ t( "subtitle" ) }</h2>
+            <div className="w-full mt-4 bg-[var(--card)] border border-[var(--border)] rounded-[var(--radius-card)] shadow-[var(--shadow-card)]">
+                <DifficultyPanel />  
+            </div>
+
             { showInfo && <InfoModal />}
-        </>
+        </section>
     )
 }
 export default Home;
