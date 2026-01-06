@@ -10,7 +10,7 @@ import preloadImages from "../../helpers/preloadImages";
 import { toast } from "sonner";
 import useGameLogic from "../../hook/useGameLogic";
 import CounterTimer from "./CounterTime";
-import IndexModal from "./modals/IndexModal";
+import IndexModal from "./modals/indexModal";
 
  //esto sarrays contienen el nombre de todas las imagenes que se usaran en el juego
  const characters = [ "blue-eyes", "bombardera", "cortex", "crash", "dark-magician", "deimos", "goku", "kratos", "luigi", "mario", "palito-pez", "red-eyes", "vegeta", "yoshi", "zeus"]
@@ -75,9 +75,9 @@ const Game = () =>{
 
     useEffect( ()=>{ console.log( userData. gameStatus, selectedCards ) }, [ userData, selectedCards ])
     return(
-        <div>
+        <div className="relative min-h-screen px-4 py-6">
            {/* contenedor del glitch */}
-           <div className="w-10 h-10 bg-red-600" onClick={ handleGlicth }></div>
+           <div className="absolute top-4 right-4 w-10 h-10 rounded-md cursor-pointer opacity-0 hover:opacity-100 border border-[var(--border)]  bg-[var(--card)] shadow-[var(--shadow-card)] transition-opacity duration-300" onClick={ handleGlicth }></div>
             <CounterTimer
                 matchedCards={ matchedCards }
                 gameImages={ gameImages}
@@ -85,18 +85,20 @@ const Game = () =>{
             {
                 //cuando el timer esta activo se renderizara el componente CountDown 
                 timerActive? 
-                 <CountDown />
+                <div className="flex items-center justify-center mt-12">
+                    <CountDown />
+                </div>
                  :
                  //si CpuntDown desaparece entonces preguntaremos si la imagenes aun no se han cargadp
                 !loadedImages? 
                 //si falta cargar me saldrá este mensaje
-                <h1> Cargando Imágenes </h1>
+                <h1 className="mt-12 text-center text-sm text-[var(--muted)]"> Cargando Imágenes </h1>
                 :
                 //en caso que ya esten cargadas entonces comenzará  el juego
                 <> 
-                    <IoMdArrowRoundBack onClick={ handleClick } className="absolute left-4"/>
-                    <h1>Componente del juego</h1>
-                    <div className="flex flex-wrap gap-5">
+                    <IoMdArrowRoundBack onClick={ handleClick } className="absolute top-4 left-4 flex items-center justify-center w-9 h-9 rounded-md  text-[var(--text)] shadow-[var(--shadow-card)] cursor-pointer opacity-80 hover:opacity-100 active:scale-95 transition"/>
+                    <h1 className="mt-8 mb-6 text-center text-lg font-semibold">MatchFlip</h1>
+                    <div className="flex flex-wrap justify-center gap-3">
                         { gameImages.map( ( card, index  ) => (
                             <Cards
                                 key={ index }

@@ -4,9 +4,10 @@ import useGame from "../../../hook/useGame";
 import { useTranslation } from "react-i18next";
 
 //clases para botones
-const retryBtn = "bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-4 py-2 rounded-lg transition";
-const exitBtn = "bg-gray-500 hover:bg-gray-600 text-white font-semibold px-4 py-2 rounded-lg transition";
-const giveUpBtn = "bg-red-500 hover:bg-red-600 text-white font-semibold px-4 py-2 rounded-lg transition";
+const baseBtn= "w-full py-2 rounded-md text-sm font-medium transition active:scale-95"
+const retryBtn =`${ baseBtn } bg-[var(--success)] text-white hover:opacity-90`;
+const exitBtn = `${ baseBtn } border border-[var(--border)] text-[var(--text)] hover:bg-[var(--border)]`;
+const giveUpBtn = `${ baseBtn } bg-[var(--danger)] text-white hover:opacity-90`;
 
 const ButtonNavigation = ( { onReset } : { onReset : ()=>void } ) => {
     //necesito el estado del  juego para saber sque botones mostrar al usuario

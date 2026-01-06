@@ -9,22 +9,20 @@ type CardsProps = {
     onClick  : ( iname: string, id: number )=> void
 }
 
-//clases predefinidas para las cartas
-const cardsStyles = "w-full h-full backface-hidden"
-const imgStyles = "max-w-[80] max-h-[80%]"
-
 const Cards = ( {id,  image, isFlipped, onClick } : CardsProps )=>{
     const { userData } = useGame( );
     const route = userData.codeTheme? "languages" : "characters"
 
     return(
         <div className="perspective-[1000px]" onClick={ () => onClick( image, id ) } >
-            <div className={ `w-[100px] h-[150px] rounded-[20px] border relative flex justify-center items-center transition ${ isFlipped? "rotate-y-180 duration-500 preserve-3d" : "" } ` }>
-                <div className={ `${ cardsStyles } flex justify-center items-center`}>
+            <div className={ `relative w-[90px] h-[130px] sm:w-[100px] sm:h-[150px] rounded-[var(--radius-card)] border border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-card)] transition duration-500 preserve-3d ${ isFlipped? "rotate-y-180" : "" } ` }>
+                {/* Cara frontal */}
+                <div className=" cursor-pointer absolute inset-0 flex items-center justify-center backface-hidden text-[var(--muted)] text-xl font-semibold">
                     <h1 className="text-2xl">¿?</h1>
                 </div>
-                <div className={ `${ cardsStyles } absolute top-0 left-0 rotate-y-180 flex justify-center items-center`}>
-                    <img className={ `${ imgStyles} object-contain` } src={ `./src/images/${ route }/${ image }.webp`} alt={ `foto de ${ image }` }/>
+                {/* Cara trasera */}
+                <div className="absolute inset-0 flex items-center justify-center rotate-y-180 backface-hidden bg-[var(--card-image-bg)] p-[var(--card-image-padding)]">
+                    <img className="w-full h-full object-contain grayscale-[var(--card-image-filter)]" src={ `./src/images/${ route }/${ image }.webp`} alt={ `foto de ${ image }` }/>
                 </div>
             </div>
         </div>

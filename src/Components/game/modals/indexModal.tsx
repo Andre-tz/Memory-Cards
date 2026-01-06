@@ -13,18 +13,21 @@ type PropsModal = {
 const IndexModal = ( { status, onReset  } : PropsModal ) =>{
 
     return (
-        <div> 
-            {
-                status === "won"?
-                    <VictoryModal />
-                    :
-                    status === "timeOut"?
-                    <TimeOutModal />
-                    :
-                    <LoseModal />
-            }
+        <div className="fixed inset-0 z50 flex items-center justify-center bg-black/50 backdrop-blur-sm px-4"> 
+            <div className="w-full max-w-sm bg-[var(--card)] border border-[var(--border)] rounded-[var(--radius-card)] shadow-[var(--shadow-card)] p-5 space-y-5">
+                {
+                    status === "won"?
+                        <VictoryModal />
+                        :
+                        status === "timeOut"?
+                        <TimeOutModal />
+                        :
+                        <LoseModal />
+                }
             
-            <ButtonNavigation onReset={ onReset }/>
+                <ButtonNavigation onReset={ onReset }/>
+
+            </div>
         </div>
     )
 }

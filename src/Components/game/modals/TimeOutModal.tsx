@@ -5,9 +5,9 @@ const TimeOutModal = ( ) =>{
     const { t } = useTranslation();
 
     return (
-        <div>
-            <h2>{ t("timeOutModal.title" ) }</h2>
-            <p>{ t("timeOutModal.message" ) }</p>
+        <div className="text-center space-y-3">
+            <h2 className="text-lg font-semibold text-[var(--text)]">{ t("timeOutModal.title" ) }</h2>
+            <p className="text-sm text-[var(--muted)]">{ t("timeOutModal.message" ) }</p>
         </div>
     );
 }

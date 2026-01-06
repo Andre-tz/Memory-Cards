@@ -31,8 +31,8 @@ const CountDown = () =>{
     
     return (
         <>
-            <h1>{  t( "gameStartIn" ) }</h1>
-            <p>{ timer }</p>
+            <h1 className="text-center text-sm text-[var(--muted)] uppercase tracking-wide">{  t( "gameStartIn" ) }</h1>
+            <p className={`mt-2 text-center text-5xl font-bold text-[var(--accenter)] tabular-nums transition ${ timer <= 3 ? "text-[var(--danger)] animate-pulse scale-110" : "text-[var(--accent)]"}`}>{ timer }</p>
         </>
 
     )

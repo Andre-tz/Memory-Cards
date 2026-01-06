@@ -5,9 +5,9 @@ const LoseModal = ( ) =>{
     const { t } = useTranslation();
 
     return (
-        <div>
-            <h2>{ t("loseModal.title" ) }</h2>
-            <p>{ t("loseModal.message" ) }</p>
+        <div className="text-center space-y-3">
+            <h2 className="text-lg font-semibold text-[var(--text)]">{ t("loseModal.title" ) }</h2>
+            <p className="text-sm text-[var(--muted)]">{ t("loseModal.message" ) }</p>
         </div>
     );
 }
