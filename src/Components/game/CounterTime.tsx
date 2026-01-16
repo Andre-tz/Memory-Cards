@@ -44,12 +44,12 @@ const CounterTimer =( { matchedCards, gameImages, resetTime  } : ArraysProps ) =
 
     useEffect( ()=>{ setTime( getInitialTime( userData.difficulty ) ) }, [ resetTime, userData.difficulty ] )
     //esta funcion cambia el formato del timepo
-    const [ minute, seconds ] = changeMmSs( time )
+    const counterTime = changeMmSs( time )
 
     return (
         <div className="flex items-center justify-center gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md px-3 py-2 shadow-[var(--shadow-card)]">
             <FcAlarmClock className="text-lg" />
-            <p className={`text-sm font-medium tabular-nums ${ time <= 10? "text-[var(--danger)]" : "text-[var(--text)]"}`}>{ `${ minute } : ${ seconds }`}</p>
+            <p className={`text-sm font-medium tabular-nums ${ time <= 10? "text-[var(--danger)]" : "text-[var(--text)]"}`}>{ counterTime }</p>
         </div>
     );
 }

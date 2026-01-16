@@ -73,7 +73,6 @@ const Game = () =>{
             })
     }, [ gameImages, userData.codeTheme ])
 
-    useEffect( ()=>{ console.log( userData. gameStatus, selectedCards ) }, [ userData, selectedCards ])
     return(
         <div className="relative min-h-screen px-4 py-6">
            {/* contenedor del glitch */}

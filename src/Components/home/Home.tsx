@@ -31,7 +31,7 @@ const Home = ( ) =>{
             setModalActive( false );
         }
     }, [ userData ])
-    useEffect( ( )=>{ console.log( showInfo) } , [ showInfo])
+
     return(
         <section className="w-full max-w-md flex flex-col items-center gap-4 mt-6 text-center">
             <div className="self-end"><ThemeSwitcher /></div>

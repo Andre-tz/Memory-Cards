@@ -53,7 +53,7 @@ const DifficultyPanel = () => {
         setTimerActive( true ); //activamos el contador
         setTimer( 5 ); // reiniciamos el contador
     }, [ setTimerActive, setTimer ] ); // se ejecuta una vez al montar el componente
-    useEffect( ( )=>{ console.log( "fue visto " + wasShown) } , [ wasShown] )
+
     return (
         <>
             <div className="w-full flex flex-col items-center gap-4">

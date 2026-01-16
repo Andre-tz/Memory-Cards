@@ -3,6 +3,8 @@ const changeMmSs = ( time: number)=>{
 
     const minute = Math.floor( time / 60 ); // sacando minutos 
     const seconds = time % 60; //el tiiempo restante es en segundos
-    return [ minute, seconds ]
+    const formattedTime = `${ String( minute ).padStart( 2, "0") } : ${ String( seconds ).padStart( 2, "0" ) }`
+
+    return formattedTime;
 }
 export default changeMmSs;
