@@ -66,6 +66,7 @@ const Game = () =>{
         preloadImages( uniqueGameImage, folder )
             .then( ()=>{
                 setLoadedImages( true )
+                toast.success( "Imagenes cargadas correctamente" )
             })
             .catch( error =>{
                 console.error( error  )

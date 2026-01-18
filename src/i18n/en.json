@@ -57,6 +57,25 @@
     "footer": {
         "textOne": "Think you can handle GodMode? 🧠🎮🔥",
         "textTwo": "Built with code, passion, and way too much coffee by Andre © 2025"
-  }
+  },
 
+    "motivation": {
+        "start": [
+            "Let’s go, {{name}}! 💪",
+            "Focus up, {{name}}. You’ve got this 🧠"
+        ],
+        "midTime": [
+            "Halfway there, {{name}} ⏳",
+            "Good pace, {{name}}. Keep it up 🔥"
+        ],
+        "lowTime": [
+            "{{name}}, time is running out! ⏱️",
+            "Hurry up, {{name}}! Stay sharp ⚡"
+        ],
+        "match": [
+            "Nice match, {{name}} 👀",
+            "Good eye, {{name}} 🧠"
+        ]
+    }
+    
 }

@@ -56,6 +56,24 @@
      "footer": {
         "textOne": "¿Crees poder con el Modo Dios? 🧠🎮🔥",
         "textTwo": "Hecho con código, pasión y demasiado café por Andre © 2025"
-  }
+  },
 
+    "motivation": {
+        "start": [
+            "¡Vamos, {{name}}! 💪",
+            "Concéntrate, {{name}} 🧠"
+        ],
+        "midTime": [
+            "Ya vas por la mitad, {{name}} ⏳",
+            "Buen ritmo, {{name}} 🔥"
+        ],
+        "lowTime": [
+            "{{name}}, se acaba el tiempo ⏱️",
+            "¡Apúrate, {{name}}! ⚡"
+        ],
+        "match": [
+            "Buen par, {{name}} 👀",
+            "Excelente memoria, {{name}} 🧠"
+        ]
+    }
 }
