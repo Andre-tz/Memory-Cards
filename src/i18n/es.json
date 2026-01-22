@@ -61,19 +61,27 @@
     "motivation": {
         "start": [
             "¡Vamos, {{name}}! 💪",
-            "Concéntrate, {{name}} 🧠"
+            "Concéntrate, {{name}} 🧠",
+            "Listo cuando tú lo estés, {{name}} 🚀",
+            "Ojos en el juego, {{name}} 👀"
         ],
         "midTime": [
-            "Ya vas por la mitad, {{name}} ⏳",
-            "Buen ritmo, {{name}} 🔥"
+            "Ya vas por la mitad ⏳",
+            "Buen ritmo 🔥",
+            "Mantén el enfoque 🎯",
+            "Lo estás haciendo bien. No te distraigas 🧠"
         ],
         "lowTime": [
             "{{name}}, se acaba el tiempo ⏱️",
-            "¡Apúrate, {{name}}! ⚡"
+            "¡Apúrate, {{name}}! ⚡",
+            "¡Ya casi, {{name}}! Muévete rápido 🔥",
+            "Decisiones rápidas ahora, {{name}} 🧠⚡"
         ],
         "match": [
-            "Buen par, {{name}} 👀",
-            "Excelente memoria, {{name}} 🧠"
+            "Buen par 👀",
+            "Excelente memoria 🧠",
+            "Match limpio 💥",
+            "Bien visto 🎯"   
         ]
     }
 }

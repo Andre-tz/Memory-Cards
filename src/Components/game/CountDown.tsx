@@ -5,13 +5,16 @@ import { useTranslation } from "react-i18next";
 import startCountdown from "../../helpers/startCountdown";
 import countdownMp3 from "../../assets/sounds/count-down.mp3"
 import playSound from "../../helpers/playSound";
+import getMotivationalMessages from "../../helpers/getMotivationalMessages";
+import { toast } from "sonner";
 
 const CountDown = () =>{
     //usare el contexto para activar el contador
-    const { setTimerActive, setTimer, timer, setUserData,timerActive } = useGame();
+    const { setTimerActive, setTimer, timer, setUserData,timerActive, userData } = useGame();
     //el traductor de texto
     const { t } = useTranslation( );
-
+    //obteniendo mensaje de acompañamiento
+    const startMessage = getMotivationalMessages( t, userData.name, "start")
     //este useEffect se disparará cuando se monte el componente 
     useEffect( () =>{
         setUserData( prev=> ( { ...prev, gameStatus: "countDown" } ) )
@@ -25,6 +28,7 @@ const CountDown = () =>{
     useEffect( () =>{
         if( timer === 0 ) { 
             setTimerActive( false )
+            toast( startMessage )
             setUserData( prev =>({
                 ...prev,
                 gameStatus : "playing"
@@ -32,7 +36,7 @@ const CountDown = () =>{
         }else if( timer == 3 ){
             playSound( countdownMp3 )
         }
-    }, [ timer, setTimerActive, setUserData])
+    }, [ timer, setTimerActive, setUserData, startMessage ])
     
     return (
         <>

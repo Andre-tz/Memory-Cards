@@ -62,19 +62,27 @@
     "motivation": {
         "start": [
             "Let’s go, {{name}}! 💪",
-            "Focus up, {{name}}. You’ve got this 🧠"
+            "Focus up, {{name}}. You’ve got this 🧠",
+            "Ready when you are, {{name}} 🚀",
+            "Eyes on the game, {{name}} 👀"
         ],
         "midTime": [
-            "Halfway there, {{name}} ⏳",
-            "Good pace, {{name}}. Keep it up 🔥"
+            "Halfway there ⏳",
+            "Good pace. Keep it up 🔥",
+            "Stay locked in 🎯",
+            "You’re doing great. Don’t lose focus 🧠"
         ],
         "lowTime": [
             "{{name}}, time is running out! ⏱️",
-            "Hurry up, {{name}}! Stay sharp ⚡"
+            "Hurry up, {{name}}! Stay sharp ⚡",
+            "Almost there, {{name}}! Move fast 🔥",
+            "Quick decisions now, {{name}} 🧠⚡"
         ],
         "match": [
-            "Nice match, {{name}} 👀",
-            "Good eye, {{name}} 🧠"
+            "Nice match 👀",
+            "Good eye 🧠",
+            "Clean match 💥",
+            "Well spotted 🎯"
         ]
     }
     
