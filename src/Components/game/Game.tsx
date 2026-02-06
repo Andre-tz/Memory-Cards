@@ -75,7 +75,7 @@ const Game = () =>{
     }, [ gameImages, userData.codeTheme ])
 
     return(
-        <div className="relative min-h-screen px-4 py-6">
+        <div className="relative px-4 py-6 flex flex-col justify-center items-center">
            {/* contenedor del glitch */}
            <div className="absolute top-4 right-4 w-10 h-10 rounded-md cursor-pointer opacity-0 hover:opacity-100 border border-[var(--border)]  bg-[var(--card)] shadow-[var(--shadow-card)] transition-opacity duration-300" onClick={ handleGlicth }></div>
             <CounterTimer
@@ -98,7 +98,7 @@ const Game = () =>{
                 <> 
                     <IoMdArrowRoundBack onClick={ handleClick } className="absolute top-4 left-4 flex items-center justify-center w-9 h-9 rounded-md  text-[var(--text)] shadow-[var(--shadow-card)] cursor-pointer opacity-80 hover:opacity-100 active:scale-95 transition"/>
                     <h1 className="mt-8 mb-6 text-center text-lg font-semibold">MatchFlip</h1>
-                    <div className="flex flex-wrap justify-center gap-3">
+                    <div className=" h-auto flex flex-wrap justify-center gap-3">
                         { gameImages.map( ( card, index  ) => (
                             <Cards
                                 key={ index }

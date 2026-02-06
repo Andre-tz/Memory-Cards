@@ -28,9 +28,9 @@ const CounterTimer =( { matchedCards, gameImages, resetTime  } : ArraysProps ) =
     //medio timepo
     const midTime = initialTimeRef.current / 2
     //mensaje de medio timepo
-    const midTimeMessage = getMotivationalMessages( t, userData.name, "midTime")
+    const midTimeMessage = getMotivationalMessages( "midTime", t, userData.name )
     //mensaje de poco tiempo
-    const lowTimeMessage = getMotivationalMessages( t, userData.name, "lowTime")
+    const lowTimeMessage = getMotivationalMessages( "lowTime", t, userData.name )
     // useEffect para cambiar el estado cuando el matched y el gameImages sean iguales
     useEffect( () =>{
         if( matchedCards.length === gameImages.length / 2 ){
@@ -62,7 +62,7 @@ const CounterTimer =( { matchedCards, gameImages, resetTime  } : ArraysProps ) =
     const counterTime = changeMmSs( time )
 
     return (
-        <div className="flex items-center justify-center gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md px-3 py-2 shadow-[var(--shadow-card)]">
+        <div className="w-50 flex items-center justify-center gap-2 bg-[var(--card)] border border-[var(--border)] rounded-md px-3 py-2 shadow-[var(--shadow-card)] sticky top-0 z-50">
             <FcAlarmClock className="text-lg" />
             <p className={`text-sm font-medium tabular-nums ${ time <= 10? "text-[var(--danger)]" : "text-[var(--text)]"}`}>{ counterTime }</p>
         </div>

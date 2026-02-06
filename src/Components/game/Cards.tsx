@@ -15,7 +15,7 @@ const Cards = ( {id,  image, isFlipped, onClick } : CardsProps )=>{
 
     return(
         <div className="perspective-[1000px]" onClick={ () => onClick( image, id ) } >
-            <div className={ `relative w-[90px] h-[130px] sm:w-[100px] sm:h-[150px] rounded-[var(--radius-card)] border border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-card)] transition duration-500 preserve-3d ${ isFlipped? "rotate-y-180" : "" } ` }>
+            <div className={ `relative w-[60px] h-[90px] sm:w-[100px] sm:h-[150px] rounded-[var(--radius-card)] border border-[var(--border)] bg-[var(--card)] shadow-[var(--shadow-card)] transition duration-500 preserve-3d ${ isFlipped? "rotate-y-180" : "" } ` }>
                 {/* Cara frontal */}
                 <div className=" cursor-pointer absolute inset-0 flex items-center justify-center backface-hidden text-[var(--muted)] text-xl font-semibold">
                     <h1 className="text-2xl">¿?</h1>

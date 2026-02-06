@@ -3,8 +3,9 @@ import type { TFunction } from "i18next";
 
 //este type tendra las posibles fases del juego
 type GamePhase = "start" | "midTime" | "lowTime" | "match"
-const getMotivationalMessages = ( t: TFunction, userName : string, phase : GamePhase ) : string  =>{
+const getMotivationalMessages = ( phase : GamePhase, t?: TFunction, userName : string = "" ) : string  =>{
 
+    if( !t ) return ""
     const message = t( `motivation.${phase}`, { name : userName, returnObjects: true } ) as string[];
     //si no encuentra message retorna vacio 
     if( !message?.length ) return ""

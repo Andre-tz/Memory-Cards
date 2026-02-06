@@ -14,7 +14,7 @@ const CountDown = () =>{
     //el traductor de texto
     const { t } = useTranslation( );
     //obteniendo mensaje de acompañamiento
-    const startMessage = getMotivationalMessages( t, userData.name, "start")
+    const startMessage = getMotivationalMessages( "start", t, userData.name )
     //este useEffect se disparará cuando se monte el componente 
     useEffect( () =>{
         setUserData( prev=> ( { ...prev, gameStatus: "countDown" } ) )

@@ -2,17 +2,25 @@ import { useState } from "react";
 import matchMp3 from "../assets/sounds/match.mp3"
 import noMatchMp3 from "../assets/sounds/no-match.mp3"
 import playSound from "../helpers/playSound";
+import getMotivationalMessages from "../helpers/getMotivationalMessages";
+import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
+import useGame from "./useGame";
 
 type Card ={
     name: string;
     index: number;
 }
 const useGameLogic = ()=>{
+    const { userData } = useGame();
+    const { t } = useTranslation();
 
     //este estado guardara las ccartas seleccionadas por el usuario
     const [ selectedCards, setSelectedCards ] = useState<Card[]>( [] );
     //este estado guarda los nombres de las cartas volteadas
     const [ matchedCards, setMatchedCards ] = useState<string[]>( [] );
+    //obteniendo mensajje
+    const matchMessage = getMotivationalMessages( "match", t, userData.name )
 
     // esta funcion manejara los click a las cartas con su posicion
     const handleCardClick = ( card : Card ) =>{
@@ -34,6 +42,8 @@ const useGameLogic = ()=>{
                 setMatchedCards( prev => [ ...prev, firstCard.name ] )
                 //reproducimos sonido de match
                 playSound( matchMp3 )
+                //aplicando mensaje de match
+                if( matchMessage ) toast( matchMessage )
                 //ahora limpiamos el array
                 setTimeout( ()=>{
                     setSelectedCards( [] )
