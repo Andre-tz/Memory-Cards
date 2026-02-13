@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { FcAlarmClock } from "react-icons/fc";
 import useGame from "../../hook/useGame";
 import getInitialTime from "../../helpers/getInitialTime";
-import changeMmSs from "../../helpers/changeMsSs";
+import changeMmSs from "../../helpers/changeMmSs";
 import startCountdown from "../../helpers/startCountdown";
 import { toast } from "sonner";
 import getMotivationalMessages from "../../helpers/getMotivationalMessages";
