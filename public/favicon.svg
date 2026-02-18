@@ -1,0 +1,12 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MatchFlip card favicon">
+  <rect width="64" height="64" rx="14" fill="#0f172a"/>
+
+  <!-- back card -->
+  <rect x="14" y="11" width="30" height="40" rx="5" transform="rotate(-8 29 31)" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+
+  <!-- front card -->
+  <rect x="20" y="12" width="30" height="40" rx="5" fill="#f8fafc" stroke="#22d3ee" stroke-width="2"/>
+
+  <!-- centered lightning mark -->
+  <path d="M36 19L27 34h7l-2 11 10-16h-6l0-10z" fill="#06b6d4"/>
+</svg>
